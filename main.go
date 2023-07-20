@@ -84,7 +84,6 @@ func parseXMLData(data []byte) (*ValCurs, error) {
 }
 
 func printCurrencyRates(valCurs *ValCurs, currencyCode string) {
-	fmt.Println("Курс валют на", valCurs.Date)
 	for _, valute := range valCurs.Valute {
 		if valute.CharCode == currencyCode {
 			value, err := strconv.ParseFloat(strings.ReplaceAll(valute.Value, ",", "."), 64)
